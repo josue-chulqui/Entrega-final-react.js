@@ -2,6 +2,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import NavBar from "./components/NavBar/NavBar"
 import "./components/NavBar/NavBar.css"
 import "./components/CardWidget/logo.css"
+import "./components/ItemListContainer/ItemListContainer.css"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import  { BrowserRouter, Routes, Route} from "react-router-dom"
 import "./components/Item/Item.css"
