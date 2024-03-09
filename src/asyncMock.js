@@ -12,7 +12,7 @@ const products = [
       id: "2",
       name: "samsung s21",
       price: 950000,
-      category: "computers",
+      category: "celular",
       img: "https://images.samsung.com/is/image/samsung/p6pim/ar/galaxy-s21/gallery/ar-galaxy-s21-5g-g991-sm-g991bzalaro-thumb-368338803",
       stock: 16,
       description: "Descripcion de Samsung s21",
@@ -39,7 +39,7 @@ const products = [
   export const getProductsByCategory = (categoryId) =>{
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.filter((prod) => prod.category === categoryId))
+            resolve(products.filter((prod) => prod.category === categoryId));
         }, 1000);
     });
   };
