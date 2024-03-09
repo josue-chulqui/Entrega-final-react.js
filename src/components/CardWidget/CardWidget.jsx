@@ -1,11 +1,11 @@
-import logo from "../../assets/react.svg"
+import logo from "../../assets/tienda.ico"
 
 const CartWidget = () => {
     return (
        <div className="logo">
         <img src={logo} />
 
-    5
+    0
         </div>
         
         
