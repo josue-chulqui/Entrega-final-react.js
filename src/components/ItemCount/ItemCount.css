@@ -1,0 +1,14 @@
+.count {
+   width: 100%;
+    align-items: center;
+}
+
+.btn {
+    background-color: aqua;
+    padding: 1rem;
+    margin: 20px;
+    padding-left: 2rem;
+}
+.count h1{
+    text-align: center;
+}

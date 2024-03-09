@@ -6,7 +6,7 @@ const NavBar = () => {
 
     return (
         <nav>
-            <h1>eComerce</h1>
+            <h1>MercadoLibre Sin Impuestos</h1>
             <section>
                 <Link to={"/category/celular"}>Celulares</Link>
                 <Link to={"/category/tablet"}>Tablet</Link>
