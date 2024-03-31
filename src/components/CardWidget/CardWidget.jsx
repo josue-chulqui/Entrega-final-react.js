@@ -1,15 +1,21 @@
-import logo from "../../assets/tienda.ico"
+import './CartWidget.css'
+import cart from "../../assets/tienda.ico";
+import { useCart } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-    return (
-       <div className="logo">
-        <img src={logo} />
-
-    0
-        </div>
-        
-        
-    )
-}
+  const { totalQuantity } = useCart();
+  return (
+    <Link to="/cart" className="CartWidget">
+      <img
+        src={cart}
+        style={{ width: 25 }}
+        alt="cart-widget"
+        className='CartImg'
+      />
+      {totalQuantity}
+    </Link>
+  );
+};
 
 export default CartWidget;

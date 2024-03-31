@@ -1,0 +1,9 @@
+.ListGroup {
+    width: 100%;
+    display: grid;
+    gap: 5rem;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    align-items: end
+    
+}

@@ -1,31 +1,54 @@
-import { useEffect, useState} from "react"
-import { getProducts, getProductsByCategory } from "../../asyncMock"
+
+import './ItemListContainer.css'
+import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
+import { useNotification } from "../../context/Notification";
+
+import { db } from '../../services/firebase';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 
 const ItemListContainer = ({greetings}) => {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const {categoryId} = useParams()
+  const { setNotification } = useNotification();
 
-    const [products, setProducts] = useState([])
-    const {categoryId} = useParams ()
 
-    useEffect( () => {
-        const asynFunctions = categoryId ? getProductsByCategory : getProducts
-        asynFunctions(categoryId)
-        .then( res => {
-            setProducts(res)
-        })
-        .catch( error => {
-            console.log (error)
-        })
-    }, [categoryId])
+  useEffect( ()=> {
+    setLoading(true)
+    const collectionRef = categoryId
+    ? query(collection(db, "products"), where("category", "==", categoryId))
+    : collection(db, "products")
+    
+    getDocs(collectionRef)
+      .then((querySnapshot) => {
+        const products = querySnapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
+        });
+        setProducts(products);
+      })
+      .catch((error) => {
+        setNotification("danger", `No es posible cargar los productos`);
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
-    return (
-        <div>
-            <h2>{greetings}</h2>
-            <ItemList products={products} />
-        </div>
-    )
+  }, [categoryId])
 
+  if(loading){
+    return <h1>Cargando productos...</h1>
+  }
+
+  return (
+    <div className='ItemListContainer'>
+        <h1>{greetings}</h1>
+        <ItemList products={products} />
+    </div>
+  )
 }
+
 export default ItemListContainer
