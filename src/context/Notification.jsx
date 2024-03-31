@@ -3,10 +3,11 @@ import { createContext, useContext, useState } from "react";
 const Notification = ({message, severity}) => {
     
     const background = {
-        success: 'green',
+        success: 'black',
         danger: 'red',
         warning: 'orange',
-        default: 'blue'
+        default: 'blue',
+       
     }
 
     const notificationStyles = {
