@@ -1,6 +1,8 @@
+import "./Checkout.css"
+
 const Checkout = () => {
     return (
-      <div>Confirmacion del pedido</div>
+      <div className="pedido">Confirmacion del pedido</div>
     )
   }
   

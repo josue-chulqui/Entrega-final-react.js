@@ -1,8 +1,7 @@
 .ItemListContainer {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    min-height: 80vh;
 }
