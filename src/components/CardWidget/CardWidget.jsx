@@ -9,7 +9,6 @@ const CartWidget = () => {
     <Link to="/cart" className="CartWidget">
       <img
         src={cart}
-        style={{ width: 25 }}
         alt="cart-widget"
         className='CartImg'
       />
