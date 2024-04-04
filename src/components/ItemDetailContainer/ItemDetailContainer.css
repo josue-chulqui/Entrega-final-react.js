@@ -3,9 +3,4 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 80vh;
-}
-
-.ItemDetailContainer article img{
-    width: 4rem;
 }

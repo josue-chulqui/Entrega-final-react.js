@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import"./Item.css"
 
 const Item = ({ id, name, img, category, price }) => {
   return (
@@ -7,7 +8,7 @@ const Item = ({ id, name, img, category, price }) => {
         <h1>{name}</h1>
       </header>
       <picture>
-        <img className="ItemImg" src={img} style={{ width: 100 }}  />
+        <img className="ItemImg" src={img} />
       </picture>
       <section>
         <p className="info">Precio: $ {price}</p>

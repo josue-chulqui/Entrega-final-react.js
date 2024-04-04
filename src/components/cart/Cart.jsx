@@ -24,7 +24,7 @@ const Cart = () => {
         </button>
       </div>
       <Link to="/checkout" className="Btn">
-        Checkout
+        Confirmar pedido
       </Link>
     </div>
   );
